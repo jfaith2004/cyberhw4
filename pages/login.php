@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+ob_start();
+include __DIR__ . '/../captcha.php';
+$captcha_code = ob_get_clean();
 ?>
 <!DOCTYPE html>
 <html lang="en">
