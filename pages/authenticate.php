@@ -26,7 +26,7 @@ $mysqli = new mysqli(
     'localhost',
     'webuser',
     'YourWebUserPass',
-    'UserDB'
+    'UserDatabase'
 );
 if ($mysqli->connect_error) {
     die('DB connection error: ' . htmlspecialchars($mysqli->connect_error));
