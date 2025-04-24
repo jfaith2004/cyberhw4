@@ -25,7 +25,7 @@ $hashed   = sha1($password);
 $mysqli = new mysqli(
     'localhost',
     'webuser',
-    'MySecretDBPass',
+    'YourWebUserPass',
     'UserDatabase'
 );
 if ($mysqli->connect_error) {
