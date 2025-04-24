@@ -1,6 +1,7 @@
 <?php
 session_start();
 
+// Execute captcha.php and grab its output
 ob_start();
 include __DIR__ . '/../captcha.php';
 $captcha_code = ob_get_clean();
@@ -36,7 +37,7 @@ $captcha_code = ob_get_clean();
           type="text"
           id="display-captcha"
           readonly
-          value="<?php echo htmlspecialchars(file_get_contents(__DIR__ . '/../captcha.php')); ?>"
+          value="<?php echo htmlspecialchars($captcha_code); ?>"
         >
       </div>
 
