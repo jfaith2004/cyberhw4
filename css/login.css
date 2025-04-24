@@ -4,8 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Poppins', sans-serif;
-  /* soft, neutral background instead of bright pastel */
-  background: #f0f4f8;
+  background: #836ccf;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +12,6 @@ body {
 }
 
 .login-container {
-  /* crisp white card with gentle shadow */
   background: #ffffff;
   padding: 3rem 2rem;
   border-radius: 8px;
@@ -22,9 +20,9 @@ body {
   width: 90%;
 }
 
-/* more breathing room below the heading */
 h2 {
   margin-bottom: 2.5rem;
+  margin-left: 2.5rem;
   color: #333;
   text-align: center;
   text-transform: uppercase;
@@ -55,14 +53,14 @@ form input[type="number"] {
 
 form input:focus {
   outline: none;
-  border-bottom-color: #888;
+  border-bottom-color: #000000;
 }
 
 button {
   width: 100%;
   padding: 0.75rem;
   margin-top: 1rem;
-  background: linear-gradient(45deg, #ff6a00 0%, #ee0979 100%);
+  background: linear-gradient(45deg, #ff6a00 0%, #973ae3 100%);
   border: none;
   border-radius: 50px;
   color: white;
