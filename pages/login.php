@@ -1,7 +1,9 @@
 <?php
 session_start();
 
-// No more math! We’ll show the image instead.
+$num1 = rand(1, 9);
+$num2 = rand(1, 9);
+$_SESSION['captcha_answer'] = $num1 + $num2;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,29 +13,28 @@ session_start();
   <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-  <div class="login-container">
-    <h2 class="title">Log In</h2>
-    <form action="authenticate.php" method="post">
+  <h1>Log In</h1>
+  <form action="authenticate.php" method="post">
+    <p>
       <label>
-        Username:
+        Username:<br>
         <input type="text" name="username" required>
       </label>
-
+    </p>
+    <p>
       <label>
-        Password:
+        Password:<br>
         <input type="password" name="password" required>
       </label>
-
+    </p>
+    <p>
       <label>
-        CAPTCHA:
-        <div style="margin: .5rem 0;">
-          <img src="/captcha.php" alt="CAPTCHA image">
-        </div>
-        <input type="text" name="captcha" required placeholder="Type the letters you see">
+         CAPTCHA:<br>
+         <img src="/captcha.php" alt="CAPTCHA"><br>
+         <input type="text" name="captcha" required placeholder="Enter the characters you see">
       </label>
-
-      <button type="submit">Sign In</button>
-    </form>
-  </div>
+    </p>
+    <button type="submit">Sign In</button>
+  </form>
 </body>
 </html>
