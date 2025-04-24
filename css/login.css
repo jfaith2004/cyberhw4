@@ -20,9 +20,8 @@ body {
   width: 90%;
 }
 
-h2 {
+h1 {
   margin-bottom: 2.5rem;
-  margin-left: 2.5rem;
   color: #333;
   text-align: center;
   text-transform: uppercase;
@@ -48,7 +47,7 @@ form input[type="number"] {
   padding: 0.5rem 0;
   margin-bottom: 1.5rem;
   font-size: 1rem;
-  color: #333;
+  color: #ffffff;
 }
 
 form input:focus {
