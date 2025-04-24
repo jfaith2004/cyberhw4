@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Execute captcha.php and grab its output
-ob_start();
-include __DIR__ . '/../captcha.php';
-$captcha_code = ob_get_clean();
+// GENERATE A 6‐CHAR CAPTCHA HERE (instead of include)
+$chars        = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+$captcha_code = substr(str_shuffle($chars), 0, 6);
+$_SESSION['captcha_code'] = $captcha_code;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -18,19 +18,16 @@ $captcha_code = ob_get_clean();
     <h2 class="title">Log In</h2>
 
     <form action="authenticate.php" method="post">
-      <!-- Username -->
       <label>
         Username:
         <input type="text" name="username" required>
       </label>
 
-      <!-- Password -->
       <label>
         Password:
         <input type="password" name="password" required>
       </label>
 
-      <!-- Display Captcha Code -->
       <div class="captcha-box">
         <label for="display-captcha">Captcha Code:</label>
         <input
@@ -41,7 +38,6 @@ $captcha_code = ob_get_clean();
         >
       </div>
 
-      <!-- User Enters Captcha -->
       <label>
         Enter the code you see:
         <input
@@ -52,7 +48,6 @@ $captcha_code = ob_get_clean();
         >
       </label>
 
-      <!-- Submit -->
       <button type="submit">Sign In</button>
     </form>
   </div>
