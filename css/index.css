@@ -12,7 +12,7 @@ body {
   overflow: hidden;
 }
 
-.container {
+.login-container {
   text-align: center;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
