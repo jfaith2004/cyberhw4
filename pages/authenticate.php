@@ -1,31 +1,31 @@
 <?php
 session_start();
 
-// 1) basic presence check
+// 1) Ensure all fields are submitted
 if (
-    !isset($_POST['username'], $_POST['password'], $_POST['captcha'])
+    empty($_POST['username']) ||
+    empty($_POST['password']) ||
+    empty($_POST['captcha_input'])
 ) {
     die('Please fill in all fields.');
 }
 
-// 2) verify the image‐CAPTCHA
+// 2) Verify the captcha
 if (
-    !isset($_SESSION['captcha_text']) ||
-    strcasecmp($_POST['captcha'], $_SESSION['captcha_text']) !== 0
+    !isset($_SESSION['captcha_code']) ||
+    strcasecmp($_POST['captcha_input'], $_SESSION['captcha_code']) !== 0
 ) {
-    // clear it so it can’t be reused
-    unset($_SESSION['captcha_text']);
+    unset($_SESSION['captcha_code']);
     die('CAPTCHA incorrect. <a href="login.php">Try again</a>.');
 }
-// clear for next request
-unset($_SESSION['captcha_text']);
+unset($_SESSION['captcha_code']);
 
-// 3) grab & hash credentials
+// 3) Hash the password
 $username = $_POST['username'];
 $password = $_POST['password'];
-$hashed   = sha1($password);   // matches your CHAR(40) column
+$hashed   = sha1($password);   // assuming your DB stores SHA1
 
-// 4) connect to MySQL – update credentials/database as needed
+// 4) Connect to MySQL
 $mysqli = new mysqli(
     'localhost',
     'root',
@@ -36,7 +36,7 @@ if ($mysqli->connect_error) {
     die('DB connection error: ' . $mysqli->connect_error);
 }
 
-// 5) prepared statement to avoid SQL injection
+// 5) Prepared statement to avoid SQL injection
 $stmt = $mysqli->prepare(
     'SELECT clearance
        FROM UserAccounts
@@ -47,14 +47,14 @@ $stmt->bind_param('ss', $username, $hashed);
 $stmt->execute();
 $stmt->store_result();
 
-// 6) check result
+// 6) Check credentials
 if ($stmt->num_rows === 1) {
     $stmt->bind_result($clearance);
     $stmt->fetch();
 
-    // On success, you might redirect to a protected page instead
+    // Success: show welcome (or redirect to protected area)
     echo "<h2>Welcome, " . htmlspecialchars($username) . "!</h2>";
-    echo "<p>Your clearance level is: " . htmlspecialchars($clearance) . "</p>";
+    echo "<p>Your clearance level: " . htmlspecialchars($clearance) . "</p>";
 } else {
     echo 'Invalid username or password. <a href="login.php">Try again</a>.';
 }

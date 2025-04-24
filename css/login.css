@@ -92,19 +92,33 @@ button:hover {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-form input[name="captcha"] {
-  width: 100%;
-  border: none;
-  border-bottom: 2px solid #aaa;
-  background: transparent;
-  padding: 0.5rem 0;
-  margin-bottom: 2rem;      /* space before the button */
-  font-size: 1rem;
-  color: #fffcfc;
-  transition: border-color 0.2s ease;
+/* phppot‐style captcha box */
+.captcha-box {
+  margin: 1.5rem 0;
 }
 
-form input[name="captcha"]:focus {
-  outline: none;
-  border-bottom-color: #000000;
+.captcha-box label {
+  display: block;
+  color: #555;
+  margin-bottom: .5rem;
+  font-weight: 500;
+}
+
+.captcha-box input#display-captcha {
+  width: 100%;
+  padding: .5rem;
+  font-size: 1rem;
+  letter-spacing: .1em;
+  text-align: center;
+  background: #eee;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: default;
+}
+
+/* breathing room before the user input */
+label > input[name="captcha_input"] {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
