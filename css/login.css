@@ -18,17 +18,16 @@ body {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
   max-width: 360px;
   width: 90%;
+  animation: slideDown 0.5s ease-out;
 }
 
-h1 {
-  margin-bottom: 2.5rem;
-  margin: 2.5rem;
-  color: #1a2c54;
+.title {
+  margin: 0 0 3rem;    /* space below the title */
+  color: #fff;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
-  font-size: 1.5rem;
-  font-family: "script-medium";
+  font-size: 1.75rem;
 }
 
 form label {
@@ -38,9 +37,9 @@ form label {
   font-weight: 500;
 }
 
+/* Underline-style inputs */
 form input[type="text"],
-form input[type="password"],
-form input[type="text"] {
+form input[type="password"] {
   width: 100%;
   border: none;
   border-bottom: 2px solid #ccc;
@@ -53,7 +52,49 @@ form input[type="text"] {
 
 form input:focus {
   outline: none;
-  border-bottom-color: #000000;
+  border-bottom-color: #000;
+}
+
+/* phppot-style captcha display box */
+.captcha-box {
+  margin: 1.5rem 0;
+}
+
+.captcha-box label {
+  display: block;
+  color: #fffcfc;
+  margin-bottom: 0.5rem;
+}
+
+.captcha-box input#display-captcha {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-align: center;
+  background: #eee;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  color: #333;
+  cursor: default;
+  margin-bottom: 1rem;
+}
+
+/* Captcha text entry field */
+input[name="captcha_input"] {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  padding: 0.5rem 0;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+input[name="captcha_input"]:focus {
+  outline: none;
+  border-bottom-color: #000;
 }
 
 button {
@@ -86,40 +127,7 @@ button:hover {
   text-align: center;
 }
 
-/* subtle slide-down for the whole form */
 @keyframes slideDown {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-/* phppot‐style captcha box */
-.captcha-box {
-  margin: 1.5rem 0;
-}
-
-.captcha-box label {
-  display: block;
-  color: #555;
-  margin-bottom: .5rem;
-  font-weight: 500;
-}
-
-.captcha-box input#display-captcha {
-  width: 100%;
-  padding: .5rem;
-  font-size: 1rem;
-  letter-spacing: .1em;
-  text-align: center;
-  background: #eee;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  color: #333;
-  cursor: default;
-}
-
-/* breathing room before the user input */
-label > input[name="captcha_input"] {
-  margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
