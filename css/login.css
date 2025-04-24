@@ -131,3 +131,7 @@ button:hover {
   from { opacity: 0; transform: translateY(-20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+
+.captcha-box input#display-captcha {
+  color: #333 !important;
+}
