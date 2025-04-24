@@ -1,16 +1,14 @@
 <?php
 session_start();
 
-// 1) Ensure all fields are submitted
 if (
     empty($_POST['username']) ||
     empty($_POST['password']) ||
     empty($_POST['captcha_input'])
 ) {
-    die('Please fill in all fields.');
+    die('Please fill in all fields. <a href="login.php">Go back</a>.');
 }
 
-// 2) Verify the captcha
 if (
     !isset($_SESSION['captcha_code']) ||
     strcasecmp($_POST['captcha_input'], $_SESSION['captcha_code']) !== 0
@@ -20,12 +18,10 @@ if (
 }
 unset($_SESSION['captcha_code']);
 
-// 3) Hash the password
-$username = $_POST['username'];
+$username = trim($_POST['username']);
 $password = $_POST['password'];
-$hashed   = sha1($password);   // assuming your DB stores SHA1
+$hashed   = sha1($password);   
 
-// 4) Connect to MySQL
 $mysqli = new mysqli(
     'localhost',
     'webuser',
@@ -33,28 +29,31 @@ $mysqli = new mysqli(
     'UserDB'
 );
 if ($mysqli->connect_error) {
-    die('DB connection error: ' . $mysqli->connect_error);
+    die('DB connection error: ' . htmlspecialchars($mysqli->connect_error));
 }
 
-// 5) Prepared statement to avoid SQL injection
 $stmt = $mysqli->prepare(
     'SELECT clearance
        FROM UserAccounts
       WHERE username = ?
         AND password = ?'
 );
+if (! $stmt) {
+    die('Prepare failed: ' . htmlspecialchars($mysqli->error));
+}
 $stmt->bind_param('ss', $username, $hashed);
 $stmt->execute();
 $stmt->store_result();
 
-// 6) Check credentials
 if ($stmt->num_rows === 1) {
     $stmt->bind_result($clearance);
     $stmt->fetch();
 
-    // Success: show welcome (or redirect to protected area)
-    echo "<h2>Welcome, " . htmlspecialchars($username) . "!</h2>";
-    echo "<p>Your clearance level: " . htmlspecialchars($clearance) . "</p>";
+    $_SESSION['username']  = $username;
+    $_SESSION['clearance'] = $clearance;
+
+    header('Location: dashboard.php');
+    exit;
 } else {
     echo 'Invalid username or password. <a href="login.php">Try again</a>.';
 }
