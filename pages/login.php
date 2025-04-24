@@ -12,7 +12,7 @@ session_start();
 </head>
 <body>
   <div class="login-container">
-    <h2 class="title">Log In</h2>
+    <h1>Log In</h1>
     <form action="authenticate.php" method="post">
       <label>
         Username:
