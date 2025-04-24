@@ -23,11 +23,12 @@ body {
 h1 {
   margin-bottom: 2.5rem;
   margin: 2.5rem;
-  color: #468ea2;
+  color: #94d4ce;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-size: 1.5rem;
+  font-family: "script-medium";
 }
 
 form label {
