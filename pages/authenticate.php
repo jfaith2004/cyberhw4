@@ -28,8 +28,8 @@ $hashed   = sha1($password);   // assuming your DB stores SHA1
 // 4) Connect to MySQL
 $mysqli = new mysqli(
     'localhost',
-    'root',
-    'YourMySQLRootPassword',
+    'webuser',
+    'YourWebUserPass',
     'UserDB'
 );
 if ($mysqli->connect_error) {
