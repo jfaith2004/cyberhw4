@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// No more math! We’ll show the image instead.
 ?>
 <!DOCTYPE html>
 <html lang="en">
