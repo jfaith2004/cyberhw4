@@ -9,10 +9,11 @@ $_SESSION['captcha_answer'] = $num1 + $num2;
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Sign In</title>
+  <title>Log In</title>
+  <link rel="stylesheet" href="css/login.css">
 </head>
 <body>
-  <h1>Sign In</h1>
+  <h1>Log In</h1>
   <form action="authenticate.php" method="post">
     <p>
       <label>

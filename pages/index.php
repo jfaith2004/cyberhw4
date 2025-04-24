@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <h1>Welcome</h1>
-    <p>Please <a href="login.php">Sign In</a></p>
+    <p>Please <a href="login.php">Log In</a></p>
   </div>
 </body>
 </html>
