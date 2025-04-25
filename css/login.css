@@ -22,9 +22,10 @@ body {
 }
 
 .btn-back {
-  position: relative;
+  position: absolute;     
   top: 1rem;
   left: 1rem;
+  z-index: 100;
   background: transparent;
   color: #fff;
   text-decoration: none;
@@ -33,14 +34,12 @@ body {
   border: 1px solid rgba(255,255,255,0.8);
   border-radius: 4px;
   transition: background 0.2s ease, color 0.2s ease;
-  z-index: 100;
 }
 
 .btn-back:hover {
   background: rgba(255,255,255,0.9);
   color: #8351a8;
 }
-
 
 .title {
   margin: 0 0 3rem;  
