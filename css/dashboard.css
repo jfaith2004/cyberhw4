@@ -34,17 +34,18 @@
   }
   
   .btn-logout {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
+    width: 100%;
+    padding: 0.75rem;
+    margin-top: 1rem;
     background: linear-gradient(45deg, #ff6a00 0%, #ee0979 100%);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
+    border: none;
     border-radius: 50px;
-    margin: 2rem auto 0;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
     transition: background 0.3s ease, transform 0.3s ease;
-    text-align: center;
   }
   
   .btn-logout:hover {
