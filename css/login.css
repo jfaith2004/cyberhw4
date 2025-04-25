@@ -27,18 +27,18 @@ body {
   left: 1rem;
   display: inline-block;    
   padding: 0.4rem 0.8rem;      
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.8);
-  border-radius: 4px;
+  background: rgba(255,255,255,0.2) !important;
+  border: 1px solid rgba(255,255,255,0.8) !important;
+  border-radius: 4px !important;
   color: #fff !important;       
   text-decoration: none !important; 
-  font-size: 0.9rem;
-  transition: background 0.2s ease, color 0.2s ease;
+  font-size: 0.9rem !important;
+  transition: background 0.2s ease, color 0.2s ease !important;
   z-index: 10;
 }
 .btn-back:hover {
-  background: #fff;
-  color: #8351a8;
+  background: #fff !important;
+  color: #8351a8 !important;
 }
 
 
