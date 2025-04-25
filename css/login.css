@@ -36,11 +36,11 @@ body {
   transition: background 0.2s ease, color 0.2s ease !important;
   z-index: 10;
 }
+
 .login-container .btn-back:hover {
   background: #fff !important;
   color: #8351a8 !important;
 }
-
 
 .title {
   margin: 0 0 3rem;  
