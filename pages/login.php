@@ -14,7 +14,7 @@ $_SESSION['captcha_code'] = $captcha_code;
 </head>
 <body>
   <div class="login-container">
-    <a href="index.php" class="btn-back"> ← Back</a>
+    <a href="/index.php" class="btn-back"> ← Back</a>
     <h2 class="title">Log In</h2>
 
     <form action="authenticate.php" method="post">
