@@ -44,7 +44,7 @@ $_SESSION['captcha_code'] = $captcha_code;
           type="text"
           name="captcha_input"
           required
-          placeholder="Type the letters you see in ALL CAPS"
+          placeholder="Type the code you see"
         >
       </label>
 
