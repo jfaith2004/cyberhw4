@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// GENERATE A 6‐CHAR CAPTCHA HERE (instead of include)
 $chars        = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 $captcha_code = substr(str_shuffle($chars), 0, 6);
 $_SESSION['captcha_code'] = $captcha_code;
