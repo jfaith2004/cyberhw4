@@ -11,7 +11,7 @@ body {
 }
 
 .login-container {
-  position: relative;
+  position: relative;  
   background: #8351a8;
   padding: 3rem 2rem;
   border-radius: 8px;
@@ -21,29 +21,28 @@ body {
   animation: slideDown 0.5s ease-out;
 }
 
-.login-container.btn-back {
-  position: absolute;           
+.btn-back {
+  position: absolute;          
   top: 1rem;
   left: 1rem;
-  display: inline-block;    
-  padding: 0.4rem 0.8rem;      
-  background: rgba(255,255,255,0.2) !important;
-  border: 1px solid rgba(255,255,255,0.8) !important;
-  border-radius: 4px !important;
-  color: #fff !important;       
-  text-decoration: none !important; 
-  font-size: 0.9rem !important;
-  transition: background 0.2s ease, color 0.2s ease !important;
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  background: rgba(255,255,255,0.2);
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 4px;
+  color: #fff !important;
+  text-decoration: none !important;
+  font-size: 0.9rem;
+  transition: background 0.2s ease, color 0.2s ease;
   z-index: 10;
 }
-
-.login-container .btn-back:hover {
-  background: #fff !important;
-  color: #8351a8 !important;
+.btn-back:hover {
+  background: rgba(255,255,255,0.9);
+  color: #8351a8;
 }
 
 .title {
-  margin: 0 0 3rem;  
+  margin: 0 0 3rem;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -78,13 +77,11 @@ form input:focus {
 .captcha-box {
   margin: 1.5rem 0;
 }
-
 .captcha-box label {
   display: block;
   color: #fffcfc;
   margin-bottom: 0.5rem;
 }
-
 .captcha-box input#display-captcha {
   width: 100%;
   padding: 0.5rem;
@@ -109,7 +106,6 @@ input[name="captcha_input"] {
   font-size: 1rem;
   color: #ffffff;
 }
-
 input[name="captcha_input"]:focus {
   outline: none;
   border-bottom-color: #000;
@@ -129,7 +125,6 @@ button {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
   transition: background 0.3s ease, transform 0.3s ease;
 }
-
 button:hover {
   background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
   transform: translateY(-2px);
@@ -151,5 +146,5 @@ button:hover {
 }
 
 .captcha-box input#display-captcha {
-  color: #000000 !important;
+  color: #000 !important;
 }
