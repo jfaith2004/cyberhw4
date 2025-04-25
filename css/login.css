@@ -10,6 +10,17 @@ body {
   height: 100vh;
 }
 
+.login-container {
+  position: relative;
+  background: #8351a8;
+  padding: 3rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 360px;
+  width: 90%;
+  animation: slideDown 0.5s ease-out;
+}
+
 .btn-back {
   position: relative;
   top: 1rem;
@@ -27,18 +38,9 @@ body {
 
 .btn-back:hover {
   background: rgba(255,255,255,0.9);
-  color: white;
+  color: #8351a8;
 }
 
-.login-container {
-  background: #8351a8;
-  padding: 3rem 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-  max-width: 360px;
-  width: 90%;
-  animation: slideDown 0.5s ease-out;
-}
 
 .title {
   margin: 0 0 3rem;  
