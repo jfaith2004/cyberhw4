@@ -1,19 +1,14 @@
-/* ─── Dashboard Styles ─── */
-
-/* Reuse the same .login-container for your dashboard wrapper */
 .login-container {
-    /* optional tweak: increase min-height if you have few images */
     min-height: 60vh;
+    background: #8351a8;
   }
   
-  /* Centered headers on the dashboard */
   .header {
     color: #fff;
     text-align: center;
     margin-bottom: 1rem;
   }
   
-  /* Image grid */
   .images {
     display: flex;
     flex-wrap: wrap;
@@ -22,7 +17,6 @@
     margin: 2rem 0;
   }
   
-  /* Individual image cards */
   .images img {
     max-width: 150px;
     border: 2px solid rgba(255, 255, 255, 0.5);
@@ -36,11 +30,10 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   }
   
-  /* Logout button */
   .btn-logout {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
+    background: linear-gradient(45deg, #ff6a00 0%, #ee0979 100%);
     color: #fff;
     text-decoration: none;
     font-weight: 600;
@@ -52,7 +45,7 @@
   }
   
   .btn-logout:hover {
-    background: linear-gradient(45deg, #ff6a00 0%, #ee0979 100%);
+    background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
     transform: translateY(-2px);
   }
   
