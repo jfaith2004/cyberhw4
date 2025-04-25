@@ -33,7 +33,7 @@ $files = isset($all[$level]) ? $all[$level] : [];  // fallback to none
   </style>
 </head>
 <body>
-  <div class="login-container">
+  <div class="dashboard-container">
     <h2 class="title header">Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
     <p class="header">Your clearance level is <strong><?php echo htmlspecialchars($level); ?></strong></p>
 
