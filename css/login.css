@@ -9,6 +9,26 @@ body {
   height: 100vh;
 }
 
+.btn-back {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(255,255,255,0.8);
+  border-radius: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+  z-index: 100;
+}
+
+.btn-back:hover {
+  background: rgba(255,255,255,0.9);
+  color: #8351a8;
+}
+
 .login-container {
   background: #8351a8;
   padding: 3rem 2rem;
@@ -20,7 +40,7 @@ body {
 }
 
 .title {
-  margin: 0 0 3rem;    /* space below the title */
+  margin: 0 0 3rem;  
   color: #fff;
   text-align: center;
   text-transform: uppercase;
@@ -35,7 +55,6 @@ form label {
   font-weight: 500;
 }
 
-/* Underline-style inputs */
 form input[type="text"],
 form input[type="password"] {
   width: 100%;
@@ -53,7 +72,6 @@ form input:focus {
   border-bottom-color: #000;
 }
 
-/* phppot-style captcha display box */
 .captcha-box {
   margin: 1.5rem 0;
 }
@@ -78,7 +96,6 @@ form input:focus {
   margin-bottom: 1rem;
 }
 
-/* Captcha text entry field */
 input[name="captcha_input"] {
   width: 100%;
   border: none;

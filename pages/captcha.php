@@ -6,6 +6,5 @@ $chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
 $code  = substr(str_shuffle($chars), 0, 6);
 $_SESSION['captcha_code'] = $code;
 
-// Output as plain text for embedding in the form
 header('Content-Type: text/plain');
 echo $code;
