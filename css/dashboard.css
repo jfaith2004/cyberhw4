@@ -48,7 +48,7 @@
   }
   
   .btn-logout:hover {
-    background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%);
+    background: linear-gradient(45deg, #ee0979 0%, #ff6a00 100%) !important;
     transform: translateY(-2px);
   }
   
