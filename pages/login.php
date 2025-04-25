@@ -13,7 +13,7 @@ $_SESSION['captcha_code'] = $captcha_code;
   <link rel="stylesheet" href="/css/login.css">
 </head>
 <body>
-  <a href="/index.php" class="btn-back">← Back</a>
+  <a href="index.php" class="btn-back"> ← Back</a>
   <div class="login-container">
     <h2 class="title">Log In</h2>
 
